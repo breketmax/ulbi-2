@@ -1,8 +1,11 @@
 import {render} from "react-dom";
-import router from "./scripts/router";
+import router from "./pages";
 import {RouterProvider} from "react-router-dom";
+import {ThemeProvider} from "app/providers/ThemeProvider";
 
 render(
-    <RouterProvider router={router} />,
+    <ThemeProvider>
+        <RouterProvider router={router} />
+    </ThemeProvider>,
     document.getElementById('root')
 );
