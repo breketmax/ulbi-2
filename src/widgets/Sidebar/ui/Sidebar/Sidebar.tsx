@@ -10,7 +10,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps): React.JSX.Element => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [collapsed, setCollapsed] = useState(false);
 
