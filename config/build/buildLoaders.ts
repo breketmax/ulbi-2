@@ -18,8 +18,8 @@ export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[]{
                     loader:'css-loader',
                     options:{
                         modules: {
-                            auto: /\.module\./gm,
-                            localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
+                            auto: true,
+                             localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
                         }
                     }
                 },
@@ -27,8 +27,25 @@ export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[]{
             ],
     };
 
+    const svgLoader = {
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack']
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     return [
         typescriptLoader,
-        scssLoader
+        scssLoader,
+        svgLoader,
+        fileLoader,
     ]
 }

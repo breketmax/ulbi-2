@@ -1,24 +1,26 @@
-import React, {Suspense, useContext, useState} from 'react';
-import "./styles/index.scss"
-import {Link,Outlet} from "react-router-dom";
-import {useTheme} from "./providers/ThemeProvider";
+import React, {Suspense} from 'react';
+import "app/styles/index.scss"
 import {classNames} from "shared/lib/classNames/classNames";
+import {useTheme} from "app/providers/ThemeProvider";
+import {AppRouter} from "app/providers/RouterProvider";
+import {Navbar} from "widgets/Navbar";
+import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {Sidebar} from "widgets/Sidebar";
 
 
 
 const App = () => {
-    const {toggleTheme,theme} = useTheme();
+    const {theme} = useTheme();
     return (
         <div className={classNames('app',{},[theme])}>
-            Hello mir manera krutit mir
-            <button onClick={toggleTheme}>Change theme</button>
-            <Link to='/'>Main</Link>
-            <Link to='/about'>Abaut</Link>
-            <Suspense fallback={<div>loading....</div>}>
-                <Outlet/>
+            <Suspense fallback="">
+                <Navbar/>
+                <div className="content-page">
+                    <Sidebar/>
+                    <AppRouter />
+                </div>
             </Suspense>
         </div>
-
     );
 };
 

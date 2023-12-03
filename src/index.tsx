@@ -1,11 +1,10 @@
-import {render} from "react-dom";
-import router from "./pages";
-import {RouterProvider} from "react-router-dom";
-import {ThemeProvider} from "app/providers/ThemeProvider";
+import Root from "app/Root";
+import {createRoot} from "react-dom/client";
+import "shared/config/i18n/i18n";
 
-render(
-    <ThemeProvider>
-        <RouterProvider router={router} />
-    </ThemeProvider>,
-    document.getElementById('root')
+
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+    <Root/>
 );
