@@ -1,13 +1,13 @@
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-const AboutPage = () => {
-    const {t} = useTranslation("about");
+const AboutPage = (): React.JSX.Element => {
+  const { t } = useTranslation('about');
 
-    return (
-        <div>
-            {t("Страница о сайте")}
-        </div>
-    );
+  return (
+    <div>
+      {t('Страница о сайте')}
+    </div>
+  );
 };
 
 export default AboutPage;

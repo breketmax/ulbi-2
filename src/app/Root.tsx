@@ -1,6 +1,6 @@
-import React, {Suspense} from 'react';
-import {withProviders} from "shared/lib/withProviders/withProviders";
+import React from 'react';
+import { withProviders } from 'shared/lib/withProviders/withProviders';
 
-const Root = () => <div/>;
+const Root = (): React.JSX.Element => <div/>;
 
-export default withProviders(Root) ;
+export default withProviders(Root);
