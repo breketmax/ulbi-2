@@ -18,7 +18,7 @@ export const Sidebar = ({ className }: SidebarProps): React.JSX.Element => {
 
   return (
     <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-      <button onClick={onToggle}>toggle</button>
+      <button onClick={onToggle}>{t('toggle')}</button>
       <div className={cls.switchers}>
         <ThemeSwitcher/>
         <LangSwitcher className={cls.lang}/>
