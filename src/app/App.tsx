@@ -1,22 +1,11 @@
 import React from 'react';
 import 'app/styles/index.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { AppRouter } from 'app/providers/RouterProvider';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { withProviders } from 'shared/lib/withProviders/withProviders';
 
 const App = (): React.JSX.Element => {
-  const { theme } = useTheme();
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Navbar/>
-      <div className="content-page">
-        <Sidebar/>
-        <AppRouter />
-      </div>
-    </div>
+    <div/>
   );
 };
 
-export default App;
+export default withProviders(App);

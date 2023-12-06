@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import './PageLoader.scss';
+import cls from './PageLoader.module.scss';
+import { Loader } from 'shared/Loader/Loader';
 
 interface PageLoaderProps {
   className?: string;
@@ -7,13 +8,8 @@ interface PageLoaderProps {
 
 export const PageLoader = ({ className }: PageLoaderProps): React.JSX.Element => {
   return (
-    <div className={classNames('page__loader', {}, [className])}>
-      <div className="lds-ring">
-        <div />
-        <div />
-        <div />
-        <div />
-      </div>
+    <div className={classNames(cls.PageLoader, {}, [className])}>
+      <Loader/>
     </div>
   );
 };

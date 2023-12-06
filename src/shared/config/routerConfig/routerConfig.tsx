@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
-import App from 'app/App';
+import { Layout } from 'widgets/Layout';
 
 export enum AppRoutes {
   MAIN = '/',
@@ -12,8 +12,7 @@ export enum AppRoutes {
 
 const router = createBrowserRouter([
   {
-    path: AppRoutes.MAIN,
-    element: <App />,
+    element: <Layout />,
     children: [
       {
         path: AppRoutes.MAIN,
