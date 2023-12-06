@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import 'app/styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
@@ -10,13 +10,11 @@ const App = (): React.JSX.Element => {
   const { theme } = useTheme();
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar/>
-        <div className="content-page">
-          <Sidebar/>
-          <AppRouter />
-        </div>
-      </Suspense>
+      <Navbar/>
+      <div className="content-page">
+        <Sidebar/>
+        <AppRouter />
+      </div>
     </div>
   );
 };

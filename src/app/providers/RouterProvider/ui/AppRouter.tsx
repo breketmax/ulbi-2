@@ -1,13 +1,14 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { PageLoader } from 'widgets/PageLoader';
 
 const AppRouter = (): React.JSX.Element => {
   return (
-    <div className="page-wrapper">
-      <Suspense fallback={<div>loading....</div>}>
+    <Suspense fallback={<PageLoader/>}>
+      <div className="page-wrapper">
         <Outlet/>
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   );
 };
 
