@@ -3,6 +3,7 @@ import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { Layout } from 'widgets/Layout';
+import { withErrorBoundary } from 'app/providers/ErrorBoundary';
 
 export enum AppRoutes {
   MAIN = '/',
@@ -12,7 +13,7 @@ export enum AppRoutes {
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: withErrorBoundary(<Layout />),
     children: [
       {
         path: AppRoutes.MAIN,
